@@ -1,48 +1,40 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
+
 int main(){
-	int bln,gaji1,gaji2,pilih;
-	cout<<" PROGRAM SLIP GAJI"<<endl;
-	cout<<" 1. Tim 1 fitur login "<<endl;
-	cout<<" 2. Tim 2 fitur responsive "<<endl;
-	cout<<" silakan pilih tim anda "<<endl;
+	int pilih;
+	float bonus, gaji, bulan, fl=22, fr=28;
+	cout<<"Daftar Tim yang dibutuhkan"<<endl;
+	cout<<"1. Fitur Login\n2. Fitur Responsif"<<endl;
+	cout<<"Silakan pilih : ";
 	cin>>pilih;
-	if(pilih==1){
-		cout<<"tim 1 fitur login "<<endl;
-		cout<<"masukan jumlah bulan penyelesaian fitur : ";cin>>bln;
-	
-		if(5<bln){
-		gaji1=22;
-		}
-			else{
-			gaji1=(22+(22*0.06));
+
+	switch(pilih){
+		case 1:
+			cout<<"Masukkan target bulan selesai : ";
+			cin>>bulan;
+			if(bulan<5){
+				bonus=fl*0.06;
+				gaji=fl+bonus;
+				cout<<"Gajimu : "<<gaji<<" juta"<<endl;
+			}else{
+				cout<<"Gajimu : "<<fl<<" juta"<<endl;
 			}
+		break;
+		case 2:
+			cout<<"Masukkan target bulan selesai : ";
+			cin>>bulan;
+			if(bulan<5){
+				bonus=fr*0.06;
+				gaji=fr+bonus;
+				cout<<"Gajimu : "<<gaji<<" juta"<<endl;
+			}else{
+				cout<<"Gajimu : "<<fr<<" juta"<<endl;
+			}
+		break;
+		default:
+		cout<<"Tim tidak tersedia"<<endl;
 	}
 
-
-	if(pilih==2){
-	cout<<"tim 2 fitur responsive : "<<endl;
-	cout<<"masukan jumlah bulan penyelesaian fitur : ";cin>>bln;
-		if(5<bln){
-		gaji2=22;}
-	
-		else {
-		gaji2=(28+(28*0.06));
-		}
-		
-	}
-cout<<"=============slip gaji============="<<endl;
-
-cout<<" Tentukan Tim Anda ";
-
-	if(pilih==1){
-		cout<<"Total gaji yang tim anda dapatkan adalah :";cin>>gaji1;
-		if(pilih==2){
-		cout<<"Total gaji yang tim anda dapatkan adalah :";cin>>gaji2;
-		}
-	}
-
-
-
-
+	return 0;
 }
